@@ -13,3 +13,14 @@ jobs:
         run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
         env:
           First_Name: Mona
+  example-job:
+    name: Save output
+    steps:
+      - shell: bash
+        run: |
+          expr 1 + 1 > output.log
+      - name: Upload output file
+        uses: actions/upload-artifact@v3
+        with:
+          name: output-log-file
+          path: output.log
