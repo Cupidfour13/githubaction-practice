@@ -13,6 +13,12 @@ jobs:
         run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
         env:
           First_Name: Mona
+      - name: condition 1
+        if: runner.os == 'Windows'
+        run: echo "The operating system on the runner is $env:RUNNER_OS."
+      - name: condition 2
+        if: runner.os != 'Windows'
+        run: echo "The operating system on the runner is not Windows, it's $RUNNER_OS."
   example-job:
     runs-on: ubuntu-latest
     name: Save output
@@ -24,4 +30,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: output-log-file
-          path: output.log
+          path: output2.log
