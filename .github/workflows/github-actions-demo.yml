@@ -14,6 +14,7 @@ jobs:
         env:
           First_Name: Mona
   example-job:
+    runs-on: ubuntu-latest
     name: Save output
     steps:
       - shell: bash
