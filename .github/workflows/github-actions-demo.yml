@@ -8,9 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     env:
       Greeting: Hello
+      my_name1: ${{ secrets.MY_NAME }} 
+      my_name2: ${{ secrets.my_name }} 
     steps:
       - name: "Say Hello Mona it's Monday"
-        run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK! $secrets.my_name"
+        run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK! $my_name1 $my_name2"
         env:
           First_Name: Mona
       - name: condition 1
