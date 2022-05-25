@@ -9,7 +9,7 @@ jobs:
     env:
       Greeting: Hello
       my_name1: ${{ secrets.MY_NAME }} 
-      my_name2: ${{ secrets.my_name }} 
+      my_name2: ${{ secrets.SECRET1 }} 
     steps:
       - name: "Say Hello Mona it's Monday"
         run: |
