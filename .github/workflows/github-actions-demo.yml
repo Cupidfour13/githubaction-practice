@@ -6,16 +6,14 @@ env:
 jobs:
   greeting_job:
     runs-on: ubuntu-latest
-    secrets: inherit
     env:
       Greeting: Hello
       my_name1: ${{ secrets.MY_NAME }} 
       my_name2: ${{ secrets.my_name }} 
     steps:
       - name: "Say Hello Mona it's Monday"
-        uses: echo ${{ secrets.MY_NAME }}
-        uses: echo ${{ secrets.my_name }}
-        uses: echo  "$my_name1 "
+        run: |
+          echo $my_name1 $my_name2
         run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK! $my_name1 $my_name2"
         env:
           First_Name: Mona
