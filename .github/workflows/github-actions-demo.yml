@@ -5,7 +5,6 @@ env:
 
 jobs:
  pass-secrets-to-workflow:
-      uses: ./.github/workflows/called-workflow.yml
       secrets: inherit
   greeting_job:
     runs-on: ubuntu-latest
