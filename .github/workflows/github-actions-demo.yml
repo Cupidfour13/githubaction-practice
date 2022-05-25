@@ -4,10 +4,9 @@ env:
   DAY_OF_WEEK: Monday
 
 jobs:
-  pass-secrets-to-workflow:
-    secrets: inherit
   greeting_job:
     runs-on: ubuntu-latest
+    secrets: inherit
     env:
       Greeting: Hello
       my_name1: ${{ secrets.MY_NAME }} 
